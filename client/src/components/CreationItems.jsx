@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
+import Markdown from 'react-markdown';
 
 const CreationItems = ({ item }) => {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <div 
-      onClick={() => setExpanded(!expanded)} 
+    <div
+      onClick={() => setExpanded(!expanded)}
       className='p-5 max-w-5xl text-sm bg-white border border-gray-200 rounded-xl shadow-sm 
                  hover:shadow-md hover:border-blue-300 transition-all duration-200 cursor-pointer'
     >
@@ -29,22 +30,25 @@ const CreationItems = ({ item }) => {
       </div>
 
       {/* Expandable Content */}
-      <div 
-        className={`transition-all duration-300 ease-in-out overflow-hidden ${expanded ? 'max-h-[500px] mt-3' : 'max-h-0'}`}
+      <div
+        className={`transition-all duration-300 ease-in-out overflow-hidden ${expanded ? 'max-h-[1000px] mt-3' : 'max-h-0'}`}
       >
         {expanded && (
           <div>
             {item.type === 'image' ? (
               <div className="flex justify-center">
-                <img 
-                  src={item.content} 
-                  alt="creation" 
+                <img
+                  src={item.content}
+                  alt="creation"
                   className='mt-3 w-full max-w-md rounded-lg shadow-md border'
                 />
               </div>
             ) : (
               <div className='mt-3 p-3 bg-gray-50 rounded-lg border text-sm text-slate-700 leading-relaxed'>
-                {item.content}
+               <div className='reset-tw' >
+                 <Markdown>{item.content}</Markdown>
+               </div>
+
               </div>
             )}
           </div>
