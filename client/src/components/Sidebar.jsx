@@ -1,5 +1,5 @@
 import { Protect, useClerk, useUser } from '@clerk/clerk-react';
-import { House, SquarePen, Hash, Image, Eraser, Scissors, Users, LogOut } from 'lucide-react';
+import { House, SquarePen, Hash, Image, Eraser, Scissors, Users, LogOut, FileText } from 'lucide-react';
 import React from 'react';
 import { NavLink } from 'react-router-dom'; // Make sure you have react-router-dom installed
 
@@ -14,7 +14,9 @@ const Sidebar = ({ sidebar, setSidebar }) => {
     { to: '/ai/generate-images', label: 'Generate Images', icon: Image },
     { to: '/ai/remove-background', label: 'Remove Background', icon: Eraser },
     { to: '/ai/remove-object', label: 'Remove Object', icon: Scissors },
-    { to: '/ai/comunity', label: 'Community', icon: Users },
+    { to: '/ai/review-resume', label: 'Review Resume', icon: FileText },
+
+    { to: '/ai/community', label: 'Community', icon: Users },
   ];
 
   // Handle loading and not signed in states gracefully
@@ -78,7 +80,7 @@ const Sidebar = ({ sidebar, setSidebar }) => {
         ))}
       </div>
 
-      
+
 
       <div className='w-full border-t border-gray-200 p-4 px-7  flex items-center justify-between' >
         <div onClick={openUserProfile} className='flex gap-2 items-center cursor-pointer ' >

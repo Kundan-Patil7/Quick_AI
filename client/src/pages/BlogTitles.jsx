@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import { Hash, Sparkles } from "lucide-react";
 
-const categories = [
+
+
+const BlogTitles = () => {
+
+  const blogCategories = [
   "General",
   "Technology",
   "Business",
@@ -12,7 +16,7 @@ const categories = [
   "Food",
 ];
 
-const BlogTitles = () => {
+
   const [selectedCategory, setSelectedCategory] = useState("General");
   const [input, setInput] = useState("");
 
@@ -46,7 +50,7 @@ const BlogTitles = () => {
 
         <p className="mt-4 text-sm font-medium">Category </p>
         <div className="mt-3 flex gap-3 flex-wrap">
-          {categories.map((item) => (
+          {blogCategories.map((item) => (
             <button
               type="button"
               key={item}
