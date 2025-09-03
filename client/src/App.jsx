@@ -4,7 +4,7 @@ import { Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
 import Layout from './pages/Layout'
 import Dashboard from './pages/Dashboard'
-import Community from './pages/community'
+import Community from './pages/Community'
 
 import BlogTitles from './pages/BlogTitles'
 import GenerateImages from './pages/GenerateImages'
